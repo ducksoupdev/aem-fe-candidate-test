@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Reviews demo</title>
+    <!-- build:css css/style.min.css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- /build -->
+</head>
+<body>
+    <div id="review-container"></div>
+    <!-- build:js js/app.min.js -->
+    <script src="bower_components/handlebars.js/dist/handlebars.js"></script>
+    <script src="app/reviews.js"></script>
+    <script src="app/app.js"></script>
+    <!-- /build -->
+    <script id="reviews-template" type="text/x-handlebars-template">
+        {{#each reviewList.reviewArticles}}
+        <div class="review-article">
+            {{#if reviewImage}}
+            <div class="image">
+                <a href="{{../../filmLink}}{{../reviewLink}}" title="{{../reviewTitle}}">
+                    <img src="{{../../imagePath}}{{../reviewImage}}" alt="{{../reviewTitle}}">
+                </a>
+            </div>
+            {{/if}}
+            <div class="content">
+                <h2><a href="{{../filmLink}}{{reviewLink}}" title="{{reviewTitle}}">{{reviewTitle}}</a></h2>
+                <p class="date">{{reviewDate}}</p>
+                <div class="summary">{{reviewSummary}}</div>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+</body>
+</html>
