@@ -1,0 +1,86 @@
+@import "../bower_components/modularized-normalize-scss/normalize";
+
+img {
+    max-width: 100%;
+}
+
+@mixin clearfix() {
+    content: " ";
+    clear: both;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    #review-container {
+        margin: 0 auto;
+        max-width: 768px;
+    }
+}
+
+.review-article {
+    padding: 10px;
+    border-top: 1px solid #eee;
+
+    &:first-child {
+        border-top: none;
+    }
+
+    &:after {
+        @include clearfix();
+    }
+
+    .image {
+        float: left;
+        width: 30%;
+
+        @media (min-width: 499px) {
+            width: 8.750em;
+        }
+
+        &+.content {
+            float: right;
+            width: 65%;
+
+            @media (min-width: 499px) {
+                float: none;
+                width: auto;
+                padding-left: 9.750em;
+            }
+        }
+    }
+
+    .content {
+        font-family: serif;
+
+        a {
+           text-decoration: none;
+        }
+
+        h2 {
+            margin: 0 auto;
+
+            a {
+                color: #333;
+            }
+        }
+
+        .date {
+            font-family: sans-serif;
+            text-transform: uppercase;
+            color: #999;
+            margin: 0.5em auto 0;
+            font-size: 0.8em;
+        }
+
+        .summary {
+            display: none;
+            padding-top: 1em;
+            font-family: sans-serif;
+
+            @media (min-width: 499px) {
+                display: inline-block;
+            }
+        }
+    }
+
+}
